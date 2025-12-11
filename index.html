@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Quiz Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>A quiz GENERATOR AND NOTES</h1>
+            <p>Upload any file or paste content to generate notes and quizzes</p>
+            <small>Supports: TXT, PDF, CSV, JSON, MD, HTML, and more</small>
+        </header>
+
+        <!-- Input Section -->
+        <div id="inputSection" class="card">
+            <!-- File Upload Area -->
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">FILE</div>
+                <p>Drop file here or click to browse</p>
+                <small>Supports all text-based files</small>
+                <input type="file" id="fileInput" accept="*/*">
+            </div>
+            <div id="fileName"></div>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Text Input -->
+            <div class="text-input-area">
+                <label for="textInput">Paste your content here:</label>
+                <textarea id="textInput" placeholder="Paste any text content here..."></textarea>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generateBtn" class="btn btn-primary">Generate Notes & Quiz</button>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Processing...</p>
+            </div>
+        </div>
+
+        <!-- Notes Section -->
+        <div id="notesSection" class="card" style="display: none;">
+            <h2 class="section-title">Generated Notes</h2>
+            
+            <div class="notes-section">
+                <h3>Key Points</h3>
+                <ul id="keySentences" class="key-sentences"></ul>
+            </div>
+
+            <div class="notes-section">
+                <h3>Important Terms</h3>
+                <div id="keyTerms" class="terms-container"></div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quizSection" class="card" style="display: none;">
+            <div class="quiz-header">
+                <h2 class="section-title">THE Quiz</h2>
+                <div id="scoreDisplay" style="display: none;"></div>
+            </div>
+            
+            <form id="quizForm">
+                <div id="questionsContainer"></div>
+                
+                <div class="button-group">
+                    <button type="button" id="submitBtn" class="btn btn-primary">Submit Quiz</button>
+                    <button type="button" id="resetBtn" class="btn btn-secondary" style="display: none;">Start Over</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Link JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
